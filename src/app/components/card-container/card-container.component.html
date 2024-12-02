@@ -1,0 +1,20 @@
+<section>
+    
+    <p-carousel
+    [value]="contents"
+    [numVisible]="6"
+    [numScroll]="1"
+    >
+    <ng-template pTemplate="header" >
+        <h4 class="px-8">{{title}}</h4>
+    </ng-template>
+    <ng-template let-content pTemplate="item">
+       <div class="hover:scale-110 hover:z-50 ease-in duration-300 m-4 "
+       (click)="goTo(content.id)"
+       >
+        <img [src]="baseImg + content.poster_path" alt="" class="peer object-cover"/>
+    </div>
+    </ng-template>
+
+    </p-carousel>
+</section>

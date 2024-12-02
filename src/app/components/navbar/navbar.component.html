@@ -1,0 +1,31 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <div
+      class="flex flex-col justify-center items-center p-4 relative hover:scale-110 cursor-pointer"
+      routerLink="home"
+    >
+      <img src="popcorn.png" alt="icon" class="h-12 relative" />
+      <h1 class="text-lg font-logo relative">Popcorn</h1>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="item" let-item>
+    <div
+      class="flex flex-row items-center p-4 gap-4 font-semibold hover:scale-110 cursor-pointer"
+      [routerLink]="item.routerLink"
+      routerLinkActive="bg-red-800 rounded-md"
+    >
+      <span [class]="item.icon"></span>
+      <p>{{ item.label }}</p>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <i
+      [ngClass]="itemFav.icon"
+      class="hover:scale-110"
+      *ngFor="let itemFav of itemsFav"
+      style="font-size: 2rem"
+      [routerLink]="itemFav.routerLink"
+      [routerLinkActive]="itemFav['routerLinkActive']"
+    ></i>
+  </ng-template>
+</p-menubar>

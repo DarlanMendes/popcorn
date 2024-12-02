@@ -1,0 +1,13 @@
+<main class="flex flex-col  overflow-x-hidden p-8" >
+    <section class="flex overflow-x-hidden gap-8">
+        <img [src]="baseImg + content.backdrop_path" class="max-w-[500px] w-1/3 h-[40vw] object-cover rounded-md" />
+        <article >
+            <div>
+                <h1 class="font-title">{{content.title}}</h1>
+                <span class="text-slate-500 font-semibold">{{extractYear(content.release_date!)}}  | {{formatTime(content.runtime!)}} {{getGenres(content.genres!)}}</span>
+            </div>
+            
+        </article>
+    </section>
+    
+</main>
